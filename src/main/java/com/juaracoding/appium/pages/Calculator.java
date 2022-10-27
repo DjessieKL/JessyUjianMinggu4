@@ -15,6 +15,8 @@ public class Calculator {
 	}
 
 	//Locator
+	@AndroidFindBy(id = "com.android.calculator:id/digit_1")
+	MobileElement btnSatu;
 	@AndroidFindBy(id = "com.android.calculator:id/digit_2")
 	MobileElement btnDua;
 	@AndroidFindBy(id = "com.android.calculator:id/digit_3")
@@ -23,49 +25,34 @@ public class Calculator {
 	@AndroidFindBy(id = "com.android.calculator:id/digit_4")
 	MobileElement btnEmpat;
 
-	@AndroidFindBy(id = "com.android.calculator:id/digit_6")
-	MobileElement btnEnam;
 	@AndroidFindBy(id = "com.android.calculator:id/eq")
 	MobileElement btnSamaDengan;
-	@AndroidFindBy(id = "com.android.calculator:id/op_sub")
-	MobileElement btnKurang;
+	@AndroidFindBy(id = "com.android.calculator:id/op_add")
+	MobileElement btnTambah;
 	@AndroidFindBy(id = "com.android.calculator:id/op_mul")
 	MobileElement btnPerkalian;
-	@AndroidFindBy(id = "com.android.calculator:id/op_div")
-	MobileElement btnPembagian;
 	@AndroidFindBy(id = "com.android.calculator:id/result_final")
 	MobileElement hasil;
 
 
-	public void pengurangan() {
-		btnEnam.click();
-		System.out.println("Click button angka 6");
-		btnKurang.click();
-		System.out.println("Click button kurang");
-		btnTiga.click();
-		System.out.println("Click button angka 3");
+	public void penambahan() {
+		btnSatu.click();
+		System.out.println("Click button angka 1");
+		btnTambah.click();
+		System.out.println("Click button Tambah");
+		btnDua.click();
+		System.out.println("Click button angka 2");
 		btnSamaDengan.click();
 		System.out.println("Click button sama dengan");
 	}
 
 	public void perkalian() {
-		btnEnam.click();
-		System.out.println("Click button angka 6");
+		btnTiga.click();
+		System.out.println("Click button angka 3");
 		btnPerkalian.click();
 		System.out.println("Click button perkalian");
-		btnDua.click();
-		System.out.println("Click button angka 2");
-		btnSamaDengan.click();
-		System.out.println("Click button sama dengan");
-	}
-
-	public void pembagian() {
 		btnEmpat.click();
 		System.out.println("Click button angka 4");
-		btnPembagian.click();
-		System.out.println("Click button pembagian");
-		btnDua.click();
-		System.out.println("Click button angka 2");
 		btnSamaDengan.click();
 		System.out.println("Click button sama dengan");
 	}

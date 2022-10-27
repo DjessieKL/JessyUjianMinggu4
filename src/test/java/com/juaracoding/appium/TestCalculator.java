@@ -38,8 +38,8 @@ public class TestCalculator {
 
 
 	@Test(priority = 1)
-	public void testPengurangan() {
-		calculator.pengurangan();
+	public void testPenambahan() {
+		calculator.penambahan();
 		System.out.println("Hasil = "+calculator.getTxtResult());
 		Assert.assertEquals(calculator.getTxtResult(), "3");
 	}
@@ -49,13 +49,6 @@ public class TestCalculator {
 		calculator.perkalian();
 		System.out.println("Hasil = "+calculator.getTxtResult());
 		Assert.assertEquals(calculator.getTxtResult(), "12");
-	}
-
-	@Test(priority = 3)
-	public void testPembagian() {
-		calculator.pembagian();
-		System.out.println("Hasil = "+calculator.getTxtResult());
-		Assert.assertEquals(calculator.getTxtResult(), "2");
 	}
 
 	@AfterClass
