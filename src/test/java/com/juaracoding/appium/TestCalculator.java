@@ -9,15 +9,12 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import java.net.MalformedURLException;
 import java.net.URL;
-
 public class TestCalculator {
-
 	private static AndroidDriver<MobileElement> driver;
 	private Calculator calculator;
-	
+
 	@BeforeClass
 	public void setUp() throws MalformedURLException {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -27,10 +24,9 @@ public class TestCalculator {
 		capabilities.setCapability("platformVersion", "7.1.1");
 		capabilities.setCapability("appPackage", "com.android.calculator2");
 		capabilities.setCapability("appActivity", "com.android.calculator2.Calculator");
-		
-		driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities); 
-	}
 
+		driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+	}
 	@BeforeMethod
 	public void pageObject() {
 		calculator = new Calculator(driver);
@@ -38,22 +34,28 @@ public class TestCalculator {
 
 
 	@Test(priority = 1)
-	public void testPenambahan() {
-		calculator.penambahan();
+	public void testPengurangan() {
+		calculator.pengurangan();
 		System.out.println("Hasil = "+calculator.getTxtResult());
 		Assert.assertEquals(calculator.getTxtResult(), "3");
 	}
-
 	@Test(priority = 2)
 	public void testPerkalian() {
-		calculator.perkalian();
+		 calculator.perkalian();
+		 System.out.println("Hasil = "+calculator.getTxtResult());
+		 Assert.assertEquals(calculator.getTxtResult(), "12");
+	}
+
+	@Test(priority = 3)
+	public void testPembagian() {
+		calculator.pembagian();
 		System.out.println("Hasil = "+calculator.getTxtResult());
-		Assert.assertEquals(calculator.getTxtResult(), "12");
+		Assert.assertEquals(calculator.getTxtResult(), "2");
 	}
 
 	@AfterClass
 	public void closeApp() {
 		driver.quit();
 	}
-	
+
 }
